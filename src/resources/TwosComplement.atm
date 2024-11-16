@@ -1,0 +1,14 @@
+Name:TwosComplement
+Description:Calculates the Two's Complement of a binary number using the method used in Discrete Math class. For example 1010 ouputs 0110.
+Blank:_
+Start:Flip
+
+$Flip
+Read:1 Write:0 Move:Right State:Flip
+Read:0 Write:1 Move:Right State:Flip
+Read:_ Write:_ Move:Left State:AddOne
+
+$AddOne
+Read:0 Write:1 Move:Left State:Halt
+Read:1 Write:0 Move:Left State:AddOne
+Read:_ Write:_ Move:Right State:Halt

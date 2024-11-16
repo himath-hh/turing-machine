@@ -1,0 +1,19 @@
+Name:IsEven
+Description:Check if a binary number is even or not. If it is, replace the tape with Y. If it is not, replace the tape with N. The first symbol must be 0 or 1.
+Blank:_
+Start:Read
+
+$Read
+Read:0 Write:0 Move:Right State:Read
+Read:1 Write:1 Move:Right State:Read
+Read:_ Write:_ Move:Left State:Check
+
+$Check
+Read:0 Write:Y Move:Left State:Erase
+Read:1 Write:N Move:Left State:Erase
+Read:_ Write:_ Move:None State:Halt
+
+$Erase
+Read:0 Write:_ Move:Left State:Erase
+Read:1 Write:_ Move:Left State:Erase
+Read:_ Write:_ Move:None State:Halt

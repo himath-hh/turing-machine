@@ -1,0 +1,12 @@
+Name:AddTwo
+Description:Append 11 to a unary number. For instance, 1 becomes 111. The smallest number is 1.
+Blank:0
+Start:AddOne
+
+$AddOne
+Read:0 Write:1 Move:Right State:AddTwo
+Read:1 Write:1 Move:Right State:AddOne
+
+$AddTwo
+Read:0 Write:1 Move:None State:Halt
+Read:1 Write:1 Move:None State:Halt
